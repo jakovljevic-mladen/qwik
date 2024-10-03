@@ -13,7 +13,7 @@ If you believe your functionality is valuable to the entire Qwik Community, disc
 # What is it?
 
 - [ ] Feature / enhancement
-- [ ] Bug
+- [ ] Bugfix
 - [ ] Docs / tests / types / typos
 - [ ] Infra
 
