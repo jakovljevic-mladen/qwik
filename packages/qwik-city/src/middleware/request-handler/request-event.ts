@@ -25,7 +25,7 @@ import { createCacheControl } from './cache-control';
 import type { ValueOrPromise } from '@builder.io/qwik';
 import type { QwikManifest, ResolvedManifest } from '@builder.io/qwik/optimizer';
 import { IsQData, QDATA_JSON, QDATA_JSON_LEN } from './user-response';
-import { isPromise } from './../../runtime/src/utils';
+import { isPromise } from '../../runtime/src/utils';
 import { QDATA_KEY } from '../../runtime/src/constants';
 
 const RequestEvLoaders = Symbol('RequestEvLoaders');
@@ -205,7 +205,7 @@ export function createRequestEvent(
         if (url !== fixedURL) {
           console.warn(`Redirect URL ${url} is invalid, fixing to ${fixedURL}`);
         }
-        headers.set('Location', fixedURL);
+        headers.set('Location', encodeURI(fixedURL));
       }
       // Fallback to 'no-store' when end user is not managing Cache-Control header
       if (statusCode > 301 && !headers.get('Cache-Control')) {
